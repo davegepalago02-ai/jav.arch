@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JAV Architecture — Precision. Innovation. Structure.</title>
-  <meta name="description" content="JAV Architecture is a premier architecture firm delivering precision-engineered, innovative, and structurally sound designs. Explore our portfolio of landmark projects." />
+  <meta name="description"
+    content="JAV Architecture is a premier architecture firm delivering precision-engineered, innovative, and structurally sound designs. Explore our portfolio of landmark projects." />
 
   <!-- ─── Fonts ─── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
   <!-- ─── Tailwind CDN ─── -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,15 +22,15 @@
       theme: {
         extend: {
           colors: {
-            'jav-red':          '#D90000',
-            'jav-red-deep':     '#A80000',
-            'jav-charcoal':     '#1A1A1A',
+            'jav-red': '#D90000',
+            'jav-red-deep': '#A80000',
+            'jav-charcoal': '#1A1A1A',
             'jav-charcoal-mid': '#2A2A2A',
           },
           fontFamily: {
-            syncopate:   ['Syncopate', 'sans-serif'],
-            montserrat:  ['Montserrat', 'sans-serif'],
-            inter:       ['Inter', 'sans-serif'],
+            syncopate: ['Syncopate', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
           },
         }
       }
@@ -36,608 +40,734 @@
   <!-- ─── Custom Styles ─── -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      FIXED GLASSMORPHISM HEADER
 ══════════════════════════════════════ -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 flex items-center justify-between">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 flex items-center justify-between">
 
-  <!-- Logo -->
-  <a href="#hero" class="flex items-center gap-3">
-    <img src="assets/logo.jpg" alt="JAV Architecture Logo" class="h-10 w-10 object-cover rounded-sm" />
-    <div class="flex flex-col leading-none">
-      <span class="font-syncopate font-bold text-jav-red text-lg tracking-widest">JAV</span>
-      <span class="font-montserrat text-[9px] tracking-[0.28em] text-jav-charcoal font-semibold uppercase">Architecture</span>
-    </div>
-  </a>
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-3">
+      <img src="assets/logo.jpg" alt="JAV Architecture Logo" class="h-10 w-10 object-cover rounded-sm" />
+      <div class="flex flex-col leading-none">
+        <span class="font-syncopate font-bold text-jav-red text-lg tracking-widest">JAV</span>
+        <span
+          class="font-montserrat text-[9px] tracking-[0.28em] text-jav-charcoal font-semibold uppercase">Architecture</span>
+      </div>
+    </a>
 
-  <!-- Desktop Navigation -->
-  <nav id="desktop-nav" class="hidden md:flex items-center gap-10">
-    <a href="#portfolio"  class="nav-link">Portfolio</a>
-    <a href="#services"   class="nav-link">Services</a>
-    <a href="#philosophy" class="nav-link">Philosophy</a>
-    <a href="#about"      class="nav-link">About</a>
-    <a href="#contact"    class="btn-jav text-[0.75rem]">Contact Us</a>
-  </nav>
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav" class="hidden md:flex items-center gap-10">
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#philosophy" class="nav-link">Philosophy</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="btn-jav text-[0.75rem]">Contact Us</a>
+    </nav>
 
-  <!-- Hamburger (mobile) -->
-  <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open navigation menu">
-    <span class="w-6 h-0.5 bg-jav-charcoal block"></span>
-    <span class="w-4 h-0.5 bg-jav-red block"></span>
-    <span class="w-6 h-0.5 bg-jav-charcoal block"></span>
-  </button>
-</header>
+    <!-- Hamburger (mobile) -->
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open navigation menu">
+      <span class="w-6 h-0.5 bg-jav-charcoal block"></span>
+      <span class="w-4 h-0.5 bg-jav-red block"></span>
+      <span class="w-6 h-0.5 bg-jav-charcoal block"></span>
+    </button>
+  </header>
 
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      MOBILE FULLSCREEN MENU OVERLAY
 ══════════════════════════════════════ -->
-<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
-  <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl font-light leading-none" aria-label="Close menu">&times;</button>
-  <a href="#portfolio"  id="mm-portfolio"  class="mobile-nav-link">Portfolio</a>
-  <a href="#services"   id="mm-services"   class="mobile-nav-link">Services</a>
-  <a href="#philosophy" id="mm-philosophy" class="mobile-nav-link">Philosophy</a>
-  <a href="#about"      id="mm-about"      class="mobile-nav-link">About</a>
-  <a href="#contact"    id="mm-contact"    class="btn-jav mt-4">Contact Us</a>
-</div>
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl font-light leading-none"
+      aria-label="Close menu">&times;</button>
+    <a href="#portfolio" id="mm-portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="#services" id="mm-services" class="mobile-nav-link">Services</a>
+    <a href="#philosophy" id="mm-philosophy" class="mobile-nav-link">Philosophy</a>
+    <a href="#about" id="mm-about" class="mobile-nav-link">About</a>
+    <a href="#contact" id="mm-contact" class="btn-jav mt-4">Contact Us</a>
+  </div>
 
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      HERO SECTION
 ══════════════════════════════════════ -->
-<section id="hero">
-  <!-- Background image (set via CSS; JS adds .loaded for Ken Burns) -->
-  <div id="hero-bg"></div>
-  <!-- Dark gradient overlay -->
-  <div id="hero-overlay"></div>
+  <section id="hero">
+    <!-- Background image (set via CSS; JS adds .loaded for Ken Burns) -->
+    <div id="hero-bg"></div>
+    <!-- Dark gradient overlay -->
+    <div id="hero-overlay"></div>
 
-  <!-- Hero Content -->
-  <div class="relative z-10 h-full flex flex-col justify-center px-8 md:px-20 lg:px-28 pt-24">
+    <!-- Hero Content -->
+    <div class="relative z-10 h-full flex flex-col justify-center px-8 md:px-20 lg:px-28 pt-24">
 
-    <!-- Label pill -->
-    <div class="reveal mb-6">
-      <span class="font-inter text-[0.72rem] tracking-[0.3em] text-white uppercase bg-jav-red px-4 py-1.5">
-        Est. Architecture Firm
-      </span>
-    </div>
+      <!-- Label pill -->
+      <div class="reveal mb-6">
+        <span class="font-inter text-[0.72rem] tracking-[0.3em] text-white uppercase bg-jav-red px-4 py-1.5">
+          Est. Architecture Firm
+        </span>
+      </div>
 
-    <!-- JAV heading block -->
-    <div class="reveal mb-2" style="transition-delay: 0.1s">
-      <div class="hero-red-block">
-        <h1 class="font-syncopate font-bold text-white text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none px-6">
-          JAV
-        </h1>
+      <!-- JAV heading block -->
+      <div class="reveal mb-2" style="transition-delay: 0.1s">
+        <div class="hero-red-block">
+          <h1
+            class="font-syncopate font-bold text-white text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none px-6">
+            JAV
+          </h1>
+        </div>
+      </div>
+
+      <!-- Architecture subheading -->
+      <div class="reveal" style="transition-delay: 0.2s">
+        <p
+          class="font-montserrat font-black text-white text-3xl sm:text-4xl lg:text-6xl tracking-[0.18em] uppercase leading-none ml-6">
+          Architecture
+        </p>
+      </div>
+
+      <!-- Tagline -->
+      <p class="reveal font-inter text-white/70 text-base sm:text-lg mt-6 ml-6 max-w-md leading-relaxed"
+        style="transition-delay: 0.3s">
+        Designing spaces that inspire.<br />Engineering structures that endure.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="reveal flex flex-wrap gap-4 mt-10 ml-6" style="transition-delay: 0.4s">
+        <a href="#portfolio" class="btn-jav">View Portfolio</a>
+        <a href="#contact" class="btn-outline-jav" style="color:#fff; border-color:rgba(255,255,255,0.5)">Get In
+          Touch</a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce"
+        aria-hidden="true">
+        <span class="font-inter text-white/50 text-[0.65rem] tracking-widest uppercase">Scroll</span>
+        <div class="w-px h-8 bg-gradient-to-b from-white/50 to-transparent"></div>
       </div>
     </div>
 
-    <!-- Architecture subheading -->
-    <div class="reveal" style="transition-delay: 0.2s">
-      <p class="font-montserrat font-black text-white text-3xl sm:text-4xl lg:text-6xl tracking-[0.18em] uppercase leading-none ml-6">
-        Architecture
-      </p>
-    </div>
-
-    <!-- Tagline -->
-    <p class="reveal font-inter text-white/70 text-base sm:text-lg mt-6 ml-6 max-w-md leading-relaxed" style="transition-delay: 0.3s">
-      Designing spaces that inspire.<br />Engineering structures that endure.
-    </p>
-
-    <!-- CTA Buttons -->
-    <div class="reveal flex flex-wrap gap-4 mt-10 ml-6" style="transition-delay: 0.4s">
-      <a href="#portfolio" class="btn-jav">View Portfolio</a>
-      <a href="#contact"   class="btn-outline-jav" style="color:#fff; border-color:rgba(255,255,255,0.5)">Get In Touch</a>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" aria-hidden="true">
-      <span class="font-inter text-white/50 text-[0.65rem] tracking-widest uppercase">Scroll</span>
-      <div class="w-px h-8 bg-gradient-to-b from-white/50 to-transparent"></div>
-    </div>
-  </div>
-
-  <!-- Angled white divider to next section -->
-  <div class="angle-divider" aria-hidden="true"></div>
-</section>
+    <!-- Angled white divider to next section -->
+    <div class="angle-divider" aria-hidden="true"></div>
+  </section>
 
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      STATS BAR
 ══════════════════════════════════════ -->
-<section id="stats" class="bg-white py-12 border-b border-gray-100">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100 text-center">
+  <section id="stats" class="bg-white py-12 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100 text-center">
 
-    <div class="reveal from-bottom px-4">
-      <div class="font-montserrat font-black text-5xl text-jav-red leading-none">50<span class="text-2xl">+</span></div>
-      <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Projects Completed</div>
+      <div class="reveal from-bottom px-4">
+        <div class="font-montserrat font-black text-5xl text-jav-red leading-none">50<span class="text-2xl">+</span>
+        </div>
+        <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Projects Completed</div>
+      </div>
+
+      <div class="reveal from-bottom px-4" style="transition-delay: 0.1s">
+        <div class="font-montserrat font-black text-5xl text-jav-red leading-none">12<span class="text-2xl">+</span>
+        </div>
+        <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Years Experience</div>
+      </div>
+
+      <div class="reveal from-bottom px-4" style="transition-delay: 0.2s">
+        <div class="font-montserrat font-black text-5xl text-jav-red leading-none">3<span class="text-2xl">+</span>
+        </div>
+        <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Design Awards</div>
+      </div>
+
+      <div class="reveal from-bottom px-4" style="transition-delay: 0.3s">
+        <div class="font-montserrat font-black text-5xl text-jav-red leading-none">100<span class="text-2xl">%</span>
+        </div>
+        <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Client Satisfaction</div>
+      </div>
+
     </div>
-
-    <div class="reveal from-bottom px-4" style="transition-delay: 0.1s">
-      <div class="font-montserrat font-black text-5xl text-jav-red leading-none">12<span class="text-2xl">+</span></div>
-      <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Years Experience</div>
-    </div>
-
-    <div class="reveal from-bottom px-4" style="transition-delay: 0.2s">
-      <div class="font-montserrat font-black text-5xl text-jav-red leading-none">3<span class="text-2xl">+</span></div>
-      <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Design Awards</div>
-    </div>
-
-    <div class="reveal from-bottom px-4" style="transition-delay: 0.3s">
-      <div class="font-montserrat font-black text-5xl text-jav-red leading-none">100<span class="text-2xl">%</span></div>
-      <div class="font-inter text-xs tracking-widest text-gray-500 uppercase mt-2">Client Satisfaction</div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════
+  <!-- ══════════════════════════════════════
      PORTFOLIO — BROKEN GRID
 ══════════════════════════════════════ -->
-<section id="portfolio" class="py-24 px-6 md:px-12 lg:px-20 bg-white">
-  <div class="max-w-7xl mx-auto">
+  <section id="portfolio" class="py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
 
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-      <div>
-        <div class="reveal flex items-center gap-3 mb-3">
-          <div class="w-8 h-0.5 bg-jav-red"></div>
-          <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Our Work</span>
-        </div>
-        <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-jav-charcoal leading-tight" style="transition-delay: 0.1s">
-          Project<br/>Portfolio
-        </h2>
-      </div>
-      <p class="reveal from-right font-inter text-gray-500 max-w-sm leading-relaxed text-sm" style="transition-delay: 0.15s">
-        Each project is a testament to our commitment to precision craftsmanship, innovative form, and enduring structural integrity.
-      </p>
-    </div>
-
-    <!-- Broken Grid -->
-    <div class="portfolio-grid">
-
-      <!-- [1] KP Building — large hero card -->
-      <div class="p-card g1 reveal" style="min-height: 300px">
-        <img src="projects/kp_building 1.jpg" alt="KP Building — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">KP Building</div>
-          <div class="p-card-sub">Commercial · Mixed-Use</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-      <!-- [2] Two-Story Resort — tall card -->
-      <div class="p-card g2 reveal from-right" style="min-height: 340px; transition-delay: 0.10s">
-        <img src="projects/two_story_resort 1.jpg" alt="Two-Story Resort — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">Two-Story Resort</div>
-          <div class="p-card-sub">Hospitality · Leisure</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-      <!-- [3] Two-Story Residence -->
-      <div class="p-card g3 reveal" style="min-height: 280px; transition-delay: 0.15s">
-        <img src="projects/two_ story_res 1.jpg" alt="Two-Story Residence — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">Two-Story Residence</div>
-          <div class="p-card-sub">Residential · Modern</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-      <!-- [4] Signature Build 01 -->
-      <div class="p-card g4 reveal from-bottom" style="min-height: 280px; transition-delay: 0.20s">
-        <img src="projects/project 1/1.jpg" alt="Signature Build 01 — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">Signature Build 01</div>
-          <div class="p-card-sub">Residential · Contemporary</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-      <!-- [5] KP Building Vol. 2 -->
-      <div class="p-card g5 reveal from-right" style="min-height: 280px; transition-delay: 0.22s">
-        <img src="projects/kp_building 2.jpg" alt="KP Building Vol. 2 — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">KP Building Vol. 2</div>
-          <div class="p-card-sub">Commercial · Facade</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-      <!-- [6] Commercial Render -->
-      <div class="p-card g6 reveal" style="min-height: 280px; transition-delay: 0.25s">
-        <img src="assets/rendered 2.jpg" alt="Commercial Architectural Render — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">Commercial Render</div>
-          <div class="p-card-sub">3D Visualization · Commercial</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-      <!-- [7] Signature Build 02 -->
-      <div class="p-card g7 reveal from-right" style="min-height: 280px; transition-delay: 0.28s">
-        <img src="projects/project 2/3.jpg" alt="Signature Build 02 — JAV Architecture" loading="lazy" />
-        <div class="p-card-overlay">
-          <div class="p-card-title">Signature Build 02</div>
-          <div class="p-card-sub">Mixed-Use · Iconic</div>
-        </div>
-        <div class="p-card-stripe"></div>
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center mt-14 reveal from-bottom">
-      <a href="#contact" class="btn-outline-jav">
-        Inquire About a Project
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     SERVICES
-══════════════════════════════════════ -->
-<section id="services" class="py-24 bg-gray-50 px-6 md:px-12 lg:px-20">
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Section Header -->
-    <div class="text-center mb-14">
-      <div class="reveal flex items-center justify-center gap-3 mb-3">
-        <div class="w-8 h-0.5 bg-jav-red"></div>
-        <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">What We Do</span>
-        <div class="w-8 h-0.5 bg-jav-red"></div>
-      </div>
-      <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-jav-charcoal" style="transition-delay: 0.1s">
-        Our Services
-      </h2>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- Architectural Design -->
-      <div class="service-card reveal">
-        <div class="text-jav-red mb-4" aria-hidden="true">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-          </svg>
-        </div>
-        <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">Architectural Design</h3>
-        <p class="font-inter text-gray-500 text-sm leading-relaxed">From concept sketches to full construction documents, we craft spaces that balance form and function.</p>
-      </div>
-
-      <!-- Master Planning -->
-      <div class="service-card reveal" style="transition-delay: 0.1s">
-        <div class="text-jav-red mb-4" aria-hidden="true">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-          </svg>
-        </div>
-        <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">Master Planning</h3>
-        <p class="font-inter text-gray-500 text-sm leading-relaxed">Strategic, large-scale planning for commercial subdivisions, townships, and mixed-use developments.</p>
-      </div>
-
-      <!-- Interior Space Design -->
-      <div class="service-card reveal" style="transition-delay: 0.2s">
-        <div class="text-jav-red mb-4" aria-hidden="true">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-          </svg>
-        </div>
-        <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">Interior Space Design</h3>
-        <p class="font-inter text-gray-500 text-sm leading-relaxed">Curated interior environments that enhance the human experience through light, material, and proportion.</p>
-      </div>
-
-      <!-- 3D Visualization -->
-      <div class="service-card reveal" style="transition-delay: 0.3s">
-        <div class="text-jav-red mb-4" aria-hidden="true">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-          </svg>
-        </div>
-        <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">3D Visualization</h3>
-        <p class="font-inter text-gray-500 text-sm leading-relaxed">Photorealistic architectural renders and walkthroughs that communicate design intent with stunning clarity.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     PHILOSOPHY SECTION
-══════════════════════════════════════ -->
-<section id="philosophy" class="py-32 px-6">
-  <div class="max-w-5xl mx-auto text-center relative z-10">
-
-    <!-- Label -->
-    <div class="reveal flex items-center justify-center gap-3 mb-10">
-      <div class="w-8 h-0.5 bg-jav-red"></div>
-      <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Our Core</span>
-      <div class="w-8 h-0.5 bg-jav-red"></div>
-    </div>
-
-    <!-- Three-word manifesto -->
-    <h2 class="reveal font-syncopate font-bold text-5xl sm:text-6xl lg:text-8xl text-white leading-tight tracking-tight"
-        style="transition-delay: 0.1s">Precision.</h2>
-    <h2 class="reveal font-syncopate font-bold text-5xl sm:text-6xl lg:text-8xl text-jav-red leading-tight tracking-tight"
-        style="transition-delay: 0.2s">Innovation.</h2>
-    <h2 class="reveal font-syncopate font-bold text-5xl sm:text-6xl lg:text-8xl text-white leading-tight tracking-tight"
-        style="transition-delay: 0.3s">Structure.</h2>
-
-    <!-- Body copy -->
-    <p class="reveal font-inter text-white/60 text-base sm:text-lg mt-10 max-w-2xl mx-auto leading-relaxed"
-       style="transition-delay: 0.4s">
-      Every line we draw, every space we design, is guided by an uncompromising pursuit of excellence. We believe architecture is not merely construction — it is the art of shaping human experience.
-    </p>
-
-    <!-- Keywords -->
-    <div class="reveal flex flex-wrap justify-center gap-4 mt-12" style="transition-delay: 0.5s">
-      <span class="pill-word">Residential</span>
-      <span class="pill-word">Commercial</span>
-      <span class="pill-word">Hospitality</span>
-      <span class="pill-word">Mixed-Use</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════
-     ABOUT — Renders Gallery + Story
-══════════════════════════════════════ -->
-<section id="about" class="py-24 px-6 md:px-12 lg:px-20 bg-white">
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Story + Image grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-
-      <!-- Text Column -->
-      <div>
-        <div class="reveal flex items-center gap-3 mb-3">
-          <div class="w-8 h-0.5 bg-jav-red"></div>
-          <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">About the Firm</span>
-        </div>
-        <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-jav-charcoal leading-tight mb-6"
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <div class="reveal flex items-center gap-3 mb-3">
+            <div class="w-8 h-0.5 bg-jav-red"></div>
+            <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Our Work</span>
+          </div>
+          <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-jav-charcoal leading-tight"
             style="transition-delay: 0.1s">
-          Building<br/>Tomorrow,<br/>Today.
-        </h2>
-        <p class="reveal font-inter text-gray-500 leading-relaxed mb-5" style="transition-delay: 0.2s">
-          JAV Architecture, led by <strong class="text-jav-charcoal">Ar. Jethro A. Villarojo, PIA</strong>, is a full-service architecture firm dedicated to delivering landmark projects that stand the test of time. We combine technical mastery with creative vision to redefine what is possible in the built environment.
+            Project<br />Portfolio
+          </h2>
+        </div>
+        <p class="reveal from-right font-inter text-gray-500 max-w-sm leading-relaxed text-sm"
+          style="transition-delay: 0.15s">
+          Each project is a testament to our commitment to precision craftsmanship, innovative form, and enduring
+          structural integrity.
         </p>
-        <p class="reveal font-inter text-gray-500 leading-relaxed mb-8" style="transition-delay: 0.25s">
-          Our process begins with deep listening and ends with spaces that exceed every expectation — structurally sound, aesthetically compelling, and deeply human.
-        </p>
-        <a href="#contact" class="reveal btn-jav inline-flex" style="transition-delay: 0.3s">
-          Start Your Project
+      </div>
+
+      <!-- Broken Grid -->
+      <div class="portfolio-grid">
+
+        <!-- [1] KP Building — large hero card -->
+        <div class="p-card g1 reveal" style="min-height: 300px">
+          <img src="projects/kp_building 1.jpg" alt="KP Building — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">KP Building</div>
+            <div class="p-card-sub">Commercial · Mixed-Use</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+        <!-- [2] Two-Story Resort — tall card -->
+        <div class="p-card g2 reveal from-right" style="min-height: 340px; transition-delay: 0.10s">
+          <img src="projects/two_story_resort 1.jpg" alt="Two-Story Resort — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">Two-Story Resort</div>
+            <div class="p-card-sub">Hospitality · Leisure</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+        <!-- [3] Two-Story Residence -->
+        <div class="p-card g3 reveal" style="min-height: 280px; transition-delay: 0.15s">
+          <img src="projects/two_ story_res 1.jpg" alt="Two-Story Residence — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">Two-Story Residence</div>
+            <div class="p-card-sub">Residential · Modern</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+        <!-- [4] Signature Build 01 -->
+        <div class="p-card g4 reveal from-bottom" style="min-height: 280px; transition-delay: 0.20s">
+          <img src="projects/project 1/1.jpg" alt="Signature Build 01 — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">Signature Build 01</div>
+            <div class="p-card-sub">Residential · Contemporary</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+        <!-- [5] KP Building Vol. 2 -->
+        <div class="p-card g5 reveal from-right" style="min-height: 280px; transition-delay: 0.22s">
+          <img src="projects/kp_building 2.jpg" alt="KP Building Vol. 2 — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">KP Building Vol. 2</div>
+            <div class="p-card-sub">Commercial · Facade</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+        <!-- [6] Commercial Render -->
+        <div class="p-card g6 reveal" style="min-height: 280px; transition-delay: 0.25s">
+          <img src="assets/rendered 2.jpg" alt="Commercial Architectural Render — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">Commercial Render</div>
+            <div class="p-card-sub">3D Visualization · Commercial</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+        <!-- [7] Signature Build 02 -->
+        <div class="p-card g7 reveal from-right" style="min-height: 280px; transition-delay: 0.28s">
+          <img src="projects/project 2/3.jpg" alt="Signature Build 02 — JAV Architecture" loading="lazy" />
+          <div class="p-card-overlay">
+            <div class="p-card-title">Signature Build 02</div>
+            <div class="p-card-sub">Mixed-Use · Iconic</div>
+          </div>
+          <div class="p-card-stripe"></div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-14 reveal from-bottom">
+        <a href="#contact" class="btn-outline-jav">
+          Inquire About a Project
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
       </div>
 
-      <!-- Image Column (offset grid) -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="reveal p-card" style="aspect-ratio: 3/4">
-          <img src="assets/rendered 1.jpg" alt="Architectural render 1" loading="lazy" />
-          <div class="p-card-overlay"><div class="p-card-title">Render 01</div></div>
-          <div class="p-card-stripe"></div>
-        </div>
-        <div class="reveal from-right p-card mt-8" style="aspect-ratio: 3/4; transition-delay: 0.1s">
-          <img src="assets/rendered 3.jpg" alt="Architectural render 3" loading="lazy" />
-          <div class="p-card-overlay"><div class="p-card-title">Render 03</div></div>
-          <div class="p-card-stripe"></div>
-        </div>
-      </div>
-
     </div>
-
-    <!-- Horizontal render strip -->
-    <div class="grid grid-cols-3 md:grid-cols-5 gap-3">
-      <div class="reveal p-card" style="aspect-ratio: 4/3; transition-delay: 0.00s">
-        <img src="assets/rendered 5.jpg" alt="Architectural Render 5" loading="lazy" />
-        <div class="p-card-overlay"></div><div class="p-card-stripe"></div>
-      </div>
-      <div class="reveal p-card" style="aspect-ratio: 4/3; transition-delay: 0.05s">
-        <img src="projects/kp_building 3.jpg" alt="KP Building 3" loading="lazy" />
-        <div class="p-card-overlay"></div><div class="p-card-stripe"></div>
-      </div>
-      <div class="reveal p-card" style="aspect-ratio: 4/3; transition-delay: 0.10s">
-        <img src="projects/two_story_resort 2.jpg" alt="Two-Story Resort 2" loading="lazy" />
-        <div class="p-card-overlay"></div><div class="p-card-stripe"></div>
-      </div>
-      <div class="reveal p-card hidden md:block" style="aspect-ratio: 4/3; transition-delay: 0.15s">
-        <img src="projects/project 3/2.jpg" alt="Project 3 — Image 2" loading="lazy" />
-        <div class="p-card-overlay"></div><div class="p-card-stripe"></div>
-      </div>
-      <div class="reveal p-card hidden md:block" style="aspect-ratio: 4/3; transition-delay: 0.20s">
-        <img src="projects/frontdesk.jpg" alt="Front Desk Interior" loading="lazy" />
-        <div class="p-card-overlay"></div><div class="p-card-stripe"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════
-     CONTACT SECTION
+  <!-- ══════════════════════════════════════
+     SERVICES
 ══════════════════════════════════════ -->
-<section id="contact" class="py-24 px-6 md:px-12 lg:px-20 bg-jav-charcoal">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+  <section id="services" class="py-24 bg-gray-50 px-6 md:px-12 lg:px-20">
+    <div class="max-w-7xl mx-auto">
 
-    <!-- Contact Info Column -->
-    <div>
-      <div class="reveal flex items-center gap-3 mb-3">
-        <div class="w-8 h-0.5 bg-jav-red"></div>
-        <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Get In Touch</span>
-      </div>
-      <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-white leading-tight mb-8"
+      <!-- Section Header -->
+      <div class="text-center mb-14">
+        <div class="reveal flex items-center justify-center gap-3 mb-3">
+          <div class="w-8 h-0.5 bg-jav-red"></div>
+          <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">What We Do</span>
+          <div class="w-8 h-0.5 bg-jav-red"></div>
+        </div>
+        <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-jav-charcoal"
           style="transition-delay: 0.1s">
-        Let's Build<br/>Something<br/>Great.
-      </h2>
-      <p class="reveal font-inter text-white/60 leading-relaxed mb-10 max-w-sm" style="transition-delay: 0.2s">
-        Whether you have a vision or just a plot of land, we want to hear about it. Reach out and let's begin the conversation.
+          Our Services
+        </h2>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Architectural Design -->
+        <div class="service-card reveal">
+          <div class="text-jav-red mb-4" aria-hidden="true">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">Architectural Design</h3>
+          <p class="font-inter text-gray-500 text-sm leading-relaxed">From concept sketches to full construction
+            documents, we craft spaces that balance form and function.</p>
+        </div>
+
+        <!-- Master Planning -->
+        <div class="service-card reveal" style="transition-delay: 0.1s">
+          <div class="text-jav-red mb-4" aria-hidden="true">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">Master Planning</h3>
+          <p class="font-inter text-gray-500 text-sm leading-relaxed">Strategic, large-scale planning for commercial
+            subdivisions, townships, and mixed-use developments.</p>
+        </div>
+
+        <!-- Interior Space Design -->
+        <div class="service-card reveal" style="transition-delay: 0.2s">
+          <div class="text-jav-red mb-4" aria-hidden="true">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">Interior Space Design</h3>
+          <p class="font-inter text-gray-500 text-sm leading-relaxed">Curated interior environments that enhance the
+            human experience through light, material, and proportion.</p>
+        </div>
+
+        <!-- 3D Visualization -->
+        <div class="service-card reveal" style="transition-delay: 0.3s">
+          <div class="text-jav-red mb-4" aria-hidden="true">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="font-montserrat font-bold text-lg text-jav-charcoal mb-3 tracking-wide">3D Visualization</h3>
+          <p class="font-inter text-gray-500 text-sm leading-relaxed">Photorealistic architectural renders and
+            walkthroughs that communicate design intent with stunning clarity.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+     PHILOSOPHY SECTION
+══════════════════════════════════════ -->
+  <section id="philosophy" class="py-32 px-6">
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+
+      <!-- Label -->
+      <div class="reveal flex items-center justify-center gap-3 mb-10">
+        <div class="w-8 h-0.5 bg-jav-red"></div>
+        <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Our Core</span>
+        <div class="w-8 h-0.5 bg-jav-red"></div>
+      </div>
+
+      <!-- Three-word manifesto -->
+      <h2
+        class="reveal font-syncopate font-bold text-5xl sm:text-6xl lg:text-8xl text-white leading-tight tracking-tight"
+        style="transition-delay: 0.1s">Precision.</h2>
+      <h2
+        class="reveal font-syncopate font-bold text-5xl sm:text-6xl lg:text-8xl text-jav-red leading-tight tracking-tight"
+        style="transition-delay: 0.2s">Innovation.</h2>
+      <h2
+        class="reveal font-syncopate font-bold text-5xl sm:text-6xl lg:text-8xl text-white leading-tight tracking-tight"
+        style="transition-delay: 0.3s">Structure.</h2>
+
+      <!-- Body copy -->
+      <p class="reveal font-inter text-white/60 text-base sm:text-lg mt-10 max-w-2xl mx-auto leading-relaxed"
+        style="transition-delay: 0.4s">
+        Every line we draw, every space we design, is guided by an uncompromising pursuit of excellence. We believe
+        architecture is not merely construction — it is the art of shaping human experience.
       </p>
 
-      <!-- Contact Details -->
-      <div class="reveal space-y-6" style="transition-delay: 0.3s">
+      <!-- Keywords -->
+      <div class="reveal flex flex-wrap justify-center gap-4 mt-12" style="transition-delay: 0.5s">
+        <span class="pill-word">Residential</span>
+        <span class="pill-word">Commercial</span>
+        <span class="pill-word">Hospitality</span>
+        <span class="pill-word">Mixed-Use</span>
+      </div>
 
-        <!-- Email -->
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-jav-red flex items-center justify-center flex-shrink-0"
-               style="clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%)" aria-hidden="true">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+     ABOUT — Renders Gallery + Story
+══════════════════════════════════════ -->
+  <section id="about" class="py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Story + Image grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+
+        <!-- Text Column -->
+        <div>
+          <div class="reveal flex items-center gap-3 mb-3">
+            <div class="w-8 h-0.5 bg-jav-red"></div>
+            <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">About the Firm</span>
+          </div>
+          <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-jav-charcoal leading-tight mb-6"
+            style="transition-delay: 0.1s">
+            Building<br />Tomorrow,<br />Today.
+          </h2>
+          <p class="reveal font-inter text-gray-500 leading-relaxed mb-5" style="transition-delay: 0.2s">
+            JAV Architecture, led by <strong class="text-jav-charcoal">Ar. Jethro A. Villarojo, PIA</strong>, is a
+            full-service architecture firm dedicated to delivering landmark projects that stand the test of time. We
+            combine technical mastery with creative vision to redefine what is possible in the built environment.
+          </p>
+          <p class="reveal font-inter text-gray-500 leading-relaxed mb-8" style="transition-delay: 0.25s">
+            Our process begins with deep listening and ends with spaces that exceed every expectation — structurally
+            sound, aesthetically compelling, and deeply human.
+          </p>
+          <a href="#contact" class="reveal btn-jav inline-flex" style="transition-delay: 0.3s">
+            Start Your Project
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </div>
-          <div>
-            <div class="font-montserrat font-semibold text-white text-sm tracking-wide">Email</div>
-            <div class="font-inter text-white/60 text-sm mt-0.5">javarchitecture@email.com</div>
-          </div>
+          </a>
         </div>
 
-        <!-- Phone -->
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 bg-jav-red flex items-center justify-center flex-shrink-0"
-               style="clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%)" aria-hidden="true">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
+        <!-- Image Column (offset grid) -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="reveal p-card" style="aspect-ratio: 3/4">
+            <img src="assets/rendered 1.jpg" alt="Architectural render 1" loading="lazy" />
+            <div class="p-card-overlay">
+              <div class="p-card-title">Render 01</div>
+            </div>
+            <div class="p-card-stripe"></div>
           </div>
-          <div>
-            <div class="font-montserrat font-semibold text-white text-sm tracking-wide">Phone</div>
-            <div class="font-inter text-white/60 text-sm mt-0.5">+63 XXX XXX XXXX</div>
+          <div class="reveal from-right p-card mt-8" style="aspect-ratio: 3/4; transition-delay: 0.1s">
+            <img src="assets/rendered 3.jpg" alt="Architectural render 3" loading="lazy" />
+            <div class="p-card-overlay">
+              <div class="p-card-title">Render 03</div>
+            </div>
+            <div class="p-card-stripe"></div>
           </div>
         </div>
 
       </div>
+
+      <!-- Horizontal render strip -->
+      <div class="grid grid-cols-3 md:grid-cols-5 gap-3">
+        <div class="reveal p-card" style="aspect-ratio: 4/3; transition-delay: 0.00s">
+          <img src="assets/rendered 5.jpg" alt="Architectural Render 5" loading="lazy" />
+          <div class="p-card-overlay"></div>
+          <div class="p-card-stripe"></div>
+        </div>
+        <div class="reveal p-card" style="aspect-ratio: 4/3; transition-delay: 0.05s">
+          <img src="projects/kp_building 3.jpg" alt="KP Building 3" loading="lazy" />
+          <div class="p-card-overlay"></div>
+          <div class="p-card-stripe"></div>
+        </div>
+        <div class="reveal p-card" style="aspect-ratio: 4/3; transition-delay: 0.10s">
+          <img src="projects/two_story_resort 2.jpg" alt="Two-Story Resort 2" loading="lazy" />
+          <div class="p-card-overlay"></div>
+          <div class="p-card-stripe"></div>
+        </div>
+        <div class="reveal p-card hidden md:block" style="aspect-ratio: 4/3; transition-delay: 0.15s">
+          <img src="projects/project 3/2.jpg" alt="Project 3 — Image 2" loading="lazy" />
+          <div class="p-card-overlay"></div>
+          <div class="p-card-stripe"></div>
+        </div>
+        <div class="reveal p-card hidden md:block" style="aspect-ratio: 4/3; transition-delay: 0.20s">
+          <img src="projects/frontdesk.jpg" alt="Front Desk Interior" loading="lazy" />
+          <div class="p-card-overlay"></div>
+          <div class="p-card-stripe"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+     CONTACT SECTION
+══════════════════════════════════════ -->
+  <section id="contact" class="py-24 px-6 md:px-12 lg:px-20 bg-jav-charcoal">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Contact Info Column -->
+      <div>
+        <div class="reveal flex items-center gap-3 mb-3">
+          <div class="w-8 h-0.5 bg-jav-red"></div>
+          <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Get In Touch</span>
+        </div>
+        <h2 class="reveal font-syncopate font-bold text-4xl md:text-5xl text-white leading-tight mb-8"
+          style="transition-delay: 0.1s">
+          Let's Build<br />Something<br />Great.
+        </h2>
+        <p class="reveal font-inter text-white/60 leading-relaxed mb-10 max-w-sm" style="transition-delay: 0.2s">
+          Whether you have a vision or just a plot of land, we want to hear about it. Reach out and let's begin the
+          conversation.
+        </p>
+
+        <!-- Contact Details -->
+        <div class="reveal space-y-6" style="transition-delay: 0.3s">
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-jav-red flex items-center justify-center flex-shrink-0"
+              style="clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%)" aria-hidden="true">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-montserrat font-semibold text-white text-sm tracking-wide">Email</div>
+              <div class="font-inter text-white/60 text-sm mt-0.5">javarchitecture@email.com</div>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-jav-red flex items-center justify-center flex-shrink-0"
+              style="clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%)" aria-hidden="true">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-montserrat font-semibold text-white text-sm tracking-wide">Phone</div>
+              <div class="font-inter text-white/60 text-sm mt-0.5">+63 XXX XXX XXXX</div>
+            </div>
+          </div>
+
+          <!-- Facebook -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-jav-red flex items-center justify-center flex-shrink-0"
+              style="clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%)" aria-hidden="true">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-montserrat font-semibold text-white text-sm tracking-wide">Facebook</div>
+              <a href="https://www.facebook.com/profile.php?id=100093003565972" target="_blank"
+                rel="noopener noreferrer"
+                class="font-inter text-white/60 text-sm mt-0.5 hover:text-jav-red transition-colors block">
+                JAV Architecture ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-jav-red flex items-center justify-center flex-shrink-0"
+              style="clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%)" aria-hidden="true">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35-.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-montserrat font-semibold text-white text-sm tracking-wide">Instagram</div>
+              <a href="https://www.instagram.com/jav_architecture/" target="_blank" rel="noopener noreferrer"
+                class="font-inter text-white/60 text-sm mt-0.5 hover:text-jav-red transition-colors block">
+                @jav_architecture ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contact Form Column -->
+      <div class="reveal from-right" style="transition-delay: 0.2s">
+        <form id="contact-form" class="space-y-8" novalidate>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <label for="fname"
+                class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">First Name</label>
+              <input id="fname" name="fname" type="text" placeholder="Juan" required class="form-field" />
+            </div>
+            <div>
+              <label for="lname"
+                class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Last Name</label>
+              <input id="lname" name="lname" type="text" placeholder="dela Cruz" required class="form-field" />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Email
+              Address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required class="form-field" />
+          </div>
+
+          <div>
+            <label for="project-type"
+              class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Project Type</label>
+            <select id="project-type" name="project-type" class="form-field" style="color: rgba(255,255,255,0.6)">
+              <option value="" disabled selected>Select a category</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="mixed-use">Mixed-Use</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message"
+              class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your vision..." required
+              class="form-field"></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn-jav w-full justify-center">
+            Send Message
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </button>
+
+          <!-- Success message (hidden by default; shown by JS) -->
+          <div id="form-success" class="hidden text-center font-inter text-sm text-green-400 py-2" role="alert">
+            ✓ Message sent! We'll be in touch shortly.
+          </div>
+        </form>
+      </div>
     </div>
 
-    <!-- Contact Form Column -->
-    <div class="reveal from-right" style="transition-delay: 0.2s">
-      <form id="contact-form" class="space-y-8" novalidate>
+    <!-- ── LOCATION MAP — Full-width below the 2-col grid ── -->
+    <div class="reveal from-bottom mt-16 max-w-6xl mx-auto" style="transition-delay: 0.35s">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div>
-            <label for="fname" class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">First Name</label>
-            <input id="fname" name="fname" type="text" placeholder="Juan" required class="form-field" />
-          </div>
-          <div>
-            <label for="lname" class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Last Name</label>
-            <input id="lname" name="lname" type="text" placeholder="dela Cruz" required class="form-field" />
-          </div>
-        </div>
+      <!-- Label -->
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-0.5 bg-jav-red"></div>
+        <span class="font-inter text-xs tracking-[0.3em] text-jav-red uppercase font-semibold">Our Location</span>
+      </div>
 
-        <div>
-          <label for="email" class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Email Address</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required class="form-field" />
-        </div>
+      <!-- Map: red top-border + slight desaturate to suit dark theme -->
+      <div style="border-top: 3px solid #D90000; overflow: hidden;">
+        <iframe id="office-map" title="JAV Architecture Office Location"
+          src="https://maps.google.com/maps?q=8%C2%B028'04.5%22N+124%C2%B038'47.9%22E&output=embed&hl=en&z=17"
+          width="100%" height="420"
+          style="border: 0; display: block; filter: grayscale(15%) contrast(1.05) brightness(0.92);" allowfullscreen
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
 
-        <div>
-          <label for="project-type" class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Project Type</label>
-          <select id="project-type" name="project-type" class="form-field" style="color: rgba(255,255,255,0.6)">
-            <option value="" disabled selected>Select a category</option>
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial</option>
-            <option value="hospitality">Hospitality</option>
-            <option value="mixed-use">Mixed-Use</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+      <!-- Direct link -->
+      <div class="mt-3 text-right">
+        <a href="https://maps.app.goo.gl/9SHdP9yCAbBmCTvT7" target="_blank" rel="noopener noreferrer"
+          class="font-inter text-xs tracking-widest text-white/40 hover:text-jav-red transition-colors uppercase">
+          Open in Google Maps ↗
+        </a>
+      </div>
 
-        <div>
-          <label for="message" class="font-inter text-[0.7rem] tracking-widest text-white/50 uppercase block mb-1">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your vision..." required class="form-field"></textarea>
-        </div>
-
-        <button type="submit" id="submit-btn" class="btn-jav w-full justify-center">
-          Send Message
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-          </svg>
-        </button>
-
-        <!-- Success message (hidden by default; shown by JS) -->
-        <div id="form-success" class="hidden text-center font-inter text-sm text-green-400 py-2" role="alert">
-          ✓ Message sent! We'll be in touch shortly.
-        </div>
-
-      </form>
     </div>
 
-  </div>
-</section>
+  </section>
 
 
-<!-- ══════════════════════════════════════
+
+  <!-- ══════════════════════════════════════
      FOOTER
 ══════════════════════════════════════ -->
-<footer class="bg-black px-6 md:px-12 lg:px-20 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto">
+  <footer class="bg-black px-6 md:px-12 lg:px-20 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto">
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
 
-      <!-- Brand -->
-      <div>
-        <div class="flex items-center gap-3 mb-5">
-          <img src="assets/logo.jpg" alt="JAV Architecture" class="h-12 w-12 object-cover" />
-          <div>
-            <div class="font-syncopate font-bold text-jav-red text-xl tracking-widest">JAV</div>
-            <div class="font-montserrat text-[9px] tracking-[0.28em] text-white/60 font-semibold uppercase">Architecture</div>
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <img src="assets/logo.jpg" alt="JAV Architecture" class="h-12 w-12 object-cover" />
+            <div>
+              <div class="font-syncopate font-bold text-jav-red text-xl tracking-widest">JAV</div>
+              <div class="font-montserrat text-[9px] tracking-[0.28em] text-white/60 font-semibold uppercase">
+                Architecture</div>
+            </div>
           </div>
+          <p class="font-inter text-white/40 text-sm leading-relaxed max-w-xs mb-6">
+            Precision-engineered spaces that inspire, endure, and define the built environment of tomorrow.
+          </p>
         </div>
-        <p class="font-inter text-white/40 text-sm leading-relaxed max-w-xs">
-          Precision-engineered spaces that inspire, endure, and define the built environment of tomorrow.
-        </p>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="font-montserrat font-bold text-white text-sm tracking-widest uppercase mb-5">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#portfolio"
+                class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Portfolio</a></li>
+            <li><a href="#services"
+                class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Services</a></li>
+            <li><a href="#philosophy"
+                class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Philosophy</a></li>
+            <li><a href="#about" class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">About</a>
+            </li>
+            <li><a href="#contact"
+                class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div>
+          <h3 class="font-montserrat font-bold text-white text-sm tracking-widest uppercase mb-5">Contact</h3>
+          <address class="not-italic font-inter text-white/50 text-sm leading-loose">
+            Ar. Jethro A. Villarojo, PIA<br />
+            javarchitecture@email.com<br />
+            +63 XXX XXX XXXX<br />
+            Philippines
+          </address>
+        </div>
+
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h3 class="font-montserrat font-bold text-white text-sm tracking-widest uppercase mb-5">Quick Links</h3>
-        <ul class="space-y-3">
-          <li><a href="#portfolio"  class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Portfolio</a></li>
-          <li><a href="#services"   class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Services</a></li>
-          <li><a href="#philosophy" class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Philosophy</a></li>
-          <li><a href="#about"      class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">About</a></li>
-          <li><a href="#contact"    class="font-inter text-white/50 text-sm hover:text-jav-red transition-colors">Contact</a></li>
-        </ul>
-      </div>
+      <div class="footer-divider mb-6"></div>
 
-      <!-- Contact Details -->
-      <div>
-        <h3 class="font-montserrat font-bold text-white text-sm tracking-widest uppercase mb-5">Contact</h3>
-        <address class="not-italic font-inter text-white/50 text-sm leading-loose">
-          Ar. Jethro A. Villarojo, PIA<br/>
-          javarchitecture@email.com<br/>
-          +63 XXX XXX XXXX<br/>
-          Philippines
-        </address>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-inter text-white/30 text-xs tracking-wide">© 2026 JAV Architecture. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <p class="font-inter text-white/20 text-xs">Precision · Innovation · Structure</p>
+        </div>
       </div>
 
     </div>
-
-    <div class="footer-divider mb-6"></div>
-
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="font-inter text-white/30 text-xs tracking-wide">© 2024 JAV Architecture. All rights reserved.</p>
-      <p class="font-inter text-white/20 text-xs">Precision · Innovation · Structure</p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
 
-<!-- ─── JavaScript (loaded last for performance) ─── -->
-<script src="js/main.js"></script>
+  <!-- ─── JavaScript (loaded last for performance) ─── -->
+  <script src="js/main.js"></script>
 
 </body>
+
 </html>
