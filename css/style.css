@@ -1,0 +1,539 @@
+/* ============================================================
+   JAV ARCHITECTURE — style.css
+   Sections:
+     1. Reset & Base
+     2. Scrollbar
+     3. Typography Utilities
+     4. Header / Glassmorphism
+     5. Hero Section
+     6. Scroll Reveal Animations
+     7. Portfolio Grid & Cards
+     8. Philosophy Section
+     9. Stats Bar
+    10. Buttons (Angled CTA)
+    11. Navigation Links
+    12. Service Cards
+    13. Contact Form
+    14. Footer
+    15. Mobile Menu
+    16. Lightbox
+    17. Responsive Breakpoints
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   1. RESET & BASE
+───────────────────────────────────────── */
+:root {
+  --jav-red:          #D90000;
+  --jav-red-deep:     #A80000;
+  --jav-red-light:    #FF1A1A;
+  --jav-charcoal:     #1A1A1A;
+  --jav-charcoal-mid: #2A2A2A;
+  --jav-mist:         #F5F5F5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: var(--jav-charcoal);
+  overflow-x: hidden;
+}
+
+
+/* ─────────────────────────────────────────
+   2. SCROLLBAR
+───────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: #fff; }
+::-webkit-scrollbar-thumb  { background: var(--jav-red); }
+
+
+/* ─────────────────────────────────────────
+   3. TYPOGRAPHY UTILITIES
+───────────────────────────────────────── */
+.font-syncopate  { font-family: 'Syncopate', sans-serif; }
+.font-montserrat { font-family: 'Montserrat', sans-serif; }
+.font-inter      { font-family: 'Inter', sans-serif; }
+
+
+/* ─────────────────────────────────────────
+   4. HEADER / GLASSMORPHISM
+───────────────────────────────────────── */
+#navbar {
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(217, 0, 0, 0.12);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+#navbar.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.08);
+}
+
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--jav-charcoal);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--jav-red);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover               { color: var(--jav-red); }
+.nav-link:hover::after        { width: 100%; }
+
+
+/* ─────────────────────────────────────────
+   5. HERO SECTION
+───────────────────────────────────────── */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+}
+
+#hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/rendered 4.jpg');
+  background-size: cover;
+  background-position: center top;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+
+#hero-bg.loaded {
+  transform: scale(1);
+}
+
+#hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.72) 0%,
+    rgba(26, 26, 26, 0.30) 60%,
+    rgba(26, 26, 26, 0.55) 100%
+  );
+}
+
+.hero-red-block {
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+  background: var(--jav-red);
+  display: inline-block;
+  padding: 10px 56px 10px 0;
+}
+
+.angle-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: #fff;
+  clip-path: polygon(0 60%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+
+/* ─────────────────────────────────────────
+   6. SCROLL REVEAL ANIMATIONS
+───────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition:
+    opacity   0.75s cubic-bezier(0.22, 0.68, 0, 1.2),
+    transform 0.75s cubic-bezier(0.22, 0.68, 0, 1.2);
+}
+
+.reveal.from-right  { transform: translateX(60px); }
+.reveal.from-bottom { transform: translateY(50px); }
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+/* ─────────────────────────────────────────
+   7. PORTFOLIO GRID & CARDS
+───────────────────────────────────────── */
+
+/* Broken-grid layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+/* Grid slot assignments */
+.g1 { grid-column: 1 / 8;  grid-row: 1; aspect-ratio: 16 / 9; }
+.g2 { grid-column: 8 / 13; grid-row: 1; aspect-ratio: 4  / 5; }
+.g3 { grid-column: 1 / 5;  grid-row: 2; aspect-ratio: 4  / 5; }
+.g4 { grid-column: 5 / 9;  grid-row: 2; aspect-ratio: 1  / 1; }
+.g5 { grid-column: 9 / 13; grid-row: 2; aspect-ratio: 1  / 1; }
+.g6 { grid-column: 1 / 7;  grid-row: 3; aspect-ratio: 16 / 9; }
+.g7 { grid-column: 7 / 13; grid-row: 3; aspect-ratio: 16 / 10; }
+
+/* Card base */
+.p-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.p-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.22, 0.68, 0, 1.2);
+  display: block;
+}
+
+.p-card:hover img { transform: scale(1.07); }
+
+/* Card overlay (red tint on hover) */
+.p-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(217, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  transition: background 0.45s ease;
+}
+
+.p-card:hover .p-card-overlay { background: rgba(150, 0, 0, 0.78); }
+
+/* Card text (slides up on hover) */
+.p-card-title {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
+}
+
+.p-card-sub {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: translateY(16px);
+  opacity: 0;
+  transition: opacity 0.4s ease 0.10s, transform 0.4s ease 0.10s;
+  margin-top: 4px;
+}
+
+.p-card:hover .p-card-title,
+.p-card:hover .p-card-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Red bottom stripe (expands on hover) */
+.p-card-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--jav-red);
+  transition: width 0.4s ease;
+}
+
+.p-card:hover .p-card-stripe { width: 100%; }
+
+
+/* ─────────────────────────────────────────
+   8. PHILOSOPHY SECTION
+───────────────────────────────────────── */
+#philosophy {
+  background: var(--jav-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative geometric shapes */
+#philosophy::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  background: var(--jav-red);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  opacity: 0.06;
+}
+
+#philosophy::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 240px; height: 240px;
+  background: var(--jav-red);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  opacity: 0.06;
+}
+
+/* Angled pill labels */
+.pill-word {
+  display: inline-block;
+  border: 1.5px solid rgba(217, 0, 0, 0.4);
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  padding: 6px 28px;
+  color: var(--jav-red);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+
+/* ─────────────────────────────────────────
+   9. STATS BAR
+───────────────────────────────────────── */
+.stat-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  align-self: stretch;
+}
+
+
+/* ─────────────────────────────────────────
+   10. BUTTONS (ANGLED CTA)
+───────────────────────────────────────── */
+
+/* Solid red angled button */
+.btn-jav {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--jav-red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 12px 100%);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-jav:hover {
+  background: var(--jav-red-deep);
+  transform: translateY(-2px);
+}
+
+/* Outline angled button */
+.btn-outline-jav {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--jav-red);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 36px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 12px 100%);
+  border: 2px solid var(--jav-red);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline-jav:hover {
+  background: var(--jav-red);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+/* ─────────────────────────────────────────
+   11. SERVICE CARDS
+───────────────────────────────────────── */
+.service-card {
+  border-top: 3px solid var(--jav-red);
+  background: #fff;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Decorative angled corner */
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 60px; height: 60px;
+  background: var(--jav-red);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  opacity: 0.08;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 16px 48px rgba(217, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.service-card:hover::before { opacity: 0.18; }
+
+
+/* ─────────────────────────────────────────
+   12. CONTACT FORM
+───────────────────────────────────────── */
+.form-field {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  padding: 12px 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  width: 100%;
+  color: #fff;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.form-field:focus       { border-color: var(--jav-red); }
+.form-field::placeholder { color: rgba(255, 255, 255, 0.35); }
+
+.form-field option {
+  background: var(--jav-charcoal);
+  color: #fff;
+}
+
+
+/* ─────────────────────────────────────────
+   13. FOOTER
+───────────────────────────────────────── */
+footer { background: #111; }
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* ─────────────────────────────────────────
+   14. MOBILE MENU (FULL-SCREEN OVERLAY)
+───────────────────────────────────────── */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.97);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#mobile-menu.open { display: flex; }
+
+.mobile-nav-link {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover { color: var(--jav-red); }
+
+
+/* ─────────────────────────────────────────
+   15. LIGHTBOX (future use / galleries)
+───────────────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#lightbox.open { display: flex; }
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+
+/* ─────────────────────────────────────────
+   16. RESPONSIVE BREAKPOINTS
+───────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .g1, .g2, .g3, .g4, .g5, .g6, .g7 {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .g1, .g2, .g3, .g4, .g5, .g6, .g7 {
+    aspect-ratio: 16 / 10;
+  }
+}
